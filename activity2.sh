@@ -17,7 +17,7 @@ month=$(ls -l "$1" | awk '{ print $7 }')
 date=$(ls -l "$1" | awk '{ print $8 }')
 time=$(ls -l "$1" | awk '{ print $9 }')
 
-tempfile=$(mktemp)
+tempfile="${1}.tmp"
 echo "/**" > "$tempfile"
 echo "* File Name: $filename" >> "$tempfile"
 echo "* Owner: $owner" >> "$tempfile"
